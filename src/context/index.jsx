@@ -71,7 +71,8 @@ function ShoppingCartProvider({ children }) {
 
   useEffect(() => {
     fetchListOfProducts();
-    setCartItems(JSON.parse(localStorage.getItem('cartItems') || []));
+    const storedItems = localStorage.getItem('cartItems');
+    setCartItems(storedItems ? JSON.parse(storedItems) : []);
   }, []);
 
   // console.log(cartItems);

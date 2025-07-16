@@ -1,19 +1,27 @@
 import { useContext } from "react"
 import { ShoppingCartContext } from "../../context"
+import { useNavigate } from "react-router-dom";
 
 
 function CartTile({ singleCartItem }) {
 
   const { handleRemoveFromCart, handleAddToCart } = useContext(ShoppingCartContext);
+  const navigate = useNavigate();
+
+  function handleGoToDetails(id) {
+    navigate(`/product-details/${id}`)
+  }
 
   return (
     <>
       <div className="grid grid-cols-3 items-start gap-5 px-4">
         <div className="col-span-2 flex items-start gap-4">
-          <div className="w-28 h-28 max-sm:w-20 shrink-0 bg-gray-400 p-1 rounded-sm">
+          <div className="w-28 h-28 max-sm:w-20 shrink-0 bg-gray-200 p-1 rounded-sm">
             <img
               src={singleCartItem?.thumbnail}
-              className="w-full h-full object-contain"
+              className="w-full h-full object-contain cursor-pointer hover:opacity-60 transition"
+              onClick={() => handleGoToDetails(singleCartItem?.id)}
+              title="View details"
             />
           </div>
           <div>

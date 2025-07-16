@@ -14,7 +14,7 @@ function ProductTile({ singleProductTile }) {
   }
 
   return (
-    <div className="relative group border border-cyan-700">
+    <div className="relative group border border-transparent hover:border-cyan-500 hover:shadow-xl rounded-xl transition-all duration-300 bg-white">
       <div className="overflow-hidden aspect-square">
         <img
           src={singleProductTile?.thumbnail}
