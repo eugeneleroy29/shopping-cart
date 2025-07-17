@@ -35,14 +35,14 @@ function CartTile({ singleCartItem }) {
           <div className="mt-3">
             <button
               onClick={() => handleRemoveFromCart(singleCartItem, false)}
-              className="disabled:opacity-20 border border-[#000] px-3 py-1 rounded mr-2"
+              className="disabled:opacity-20 border border-[#000] px-3 py-1 rounded mr-2 cursor-pointer"
               disabled={singleCartItem?.quantity === 1}
             >
               -
             </button>
             <button
               onClick={() => handleAddToCart(singleCartItem)}
-              className="border border-[#000] px-3 py-1 rounded"
+              className="border border-[#000] px-3 py-1 rounded cursor-pointer"
             >
               +
             </button>

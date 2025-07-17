@@ -31,8 +31,18 @@ function CartListPage() {
             </p>
           </ul>
           <div className="mt-5 flex gap-2">
-            <button disabled={cartItems.length === 0} className=" disabled:opacity-60 text-sm px-4 py-3 bg-black text-white font-extrabold rounded-sm cursor-pointer">Checkout</button>
-            <button onClick={() => navigate('/products')} className="text-sm px-4 py-3 bg-black text-white font-extrabold rounded-sm cursor-pointer">Continue Shopping</button>
+            <button
+              disabled={cartItems.length === 0}
+              className=" disabled:opacity-60 text-sm px-4 py-3 bg-black text-white hover:opacity-70 font-extrabold rounded-sm cursor-pointer"
+            >
+              Checkout
+            </button>
+            <button
+              onClick={() => navigate('/products')}
+              className="text-sm px-4 py-3 bg-black text-white hover:opacity-70 font-extrabold rounded-sm cursor-pointer"
+            >
+              Continue Shopping
+            </button>
           </div>
         </div>
       </div>
