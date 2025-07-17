@@ -22,7 +22,7 @@ function ProductTile({ singleProductTile }) {
           className="object-cover w-full h-full transition-all duration-300 group-hover:scale-125"
         />
       </div>
-      <div className="flex items-start justify-between mt-4 space-x-4">
+      <div className="flex flex-wrap items-start justify-between mt-4 space-x-4 px-4">
         <div className="font-bold text-gray-900 px-4 sm:text-sm text-xs md:text-base">
           <p className="w-[100px] overflow-hidden text-ellipsis whitespace-nowrap">{singleProductTile.title}</p>
         </div>
