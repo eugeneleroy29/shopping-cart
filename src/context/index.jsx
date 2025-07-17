@@ -24,6 +24,7 @@ function ShoppingCartProvider({ children }) {
 
   function handleAddToCart(getProductDetails) {
     // console.log(getProductDetails);
+    if (!getProductDetails || !getProductDetails.id) return;
 
     let copyExistingCartItems = [...cartItems];
     const findIndexOfCurrentItem = copyExistingCartItems.findIndex(cartItem => cartItem.id === getProductDetails.id);
@@ -52,6 +53,8 @@ function ShoppingCartProvider({ children }) {
   }
 
   function handleRemoveFromCart(getProductDetails, isFullyRemovedFromCart) {
+    if (!getProductDetails || !getProductDetails.id) return;
+
     let copyExistingCartItems = [...cartItems];
     const findIndexOfCurrentCartItem = copyExistingCartItems.findIndex(item => item.id === getProductDetails.id);
 

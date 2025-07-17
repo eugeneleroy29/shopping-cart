@@ -34,6 +34,8 @@ function ProductDetailsPage() {
 
   if (loading) return <h1 className="text-center py-10-text-xl font-bold text-gray-600">Loading product details, please wait...</h1>
 
+  if (!productDetails) return <div className="text-center py-10 text-red-600">Product not found.</div>;
+
   return (
     <>
       <div className="p-6 lg:max-w-7xl max-w-4xl mx-auto">
@@ -88,12 +90,14 @@ function ProductDetailsPage() {
                 onClick={() => handleAddToCart(productDetails)}
                 className="disabled:opacity-45 shadow-md mt-5 min-w-[200px] px-4 py-3 border border-cyan-700 bg-transparent text-sm font-semibold rounded cursor-pointer"
                 disabled={
-                  !productDetails || cartItems.findIndex(item => item.id === productDetails.id) > -1
+                  !productDetails || cartItems.findIndex(item => item.id === productDetails?.id) > -1
                 }
               >
-                {cartItems.findIndex(item => item.id === productDetails.id) > -1
-                  ? 'Already in cart'
-                  : 'Add to cart'}
+                {!productDetails
+                  ? 'Loading...'
+                  : cartItems.findIndex(item => item.id === productDetails?.id) > -1
+                    ? 'Already in cart'
+                    : 'Add to cart'}
               </button>
             </div>
           </div>
